@@ -1,0 +1,31 @@
+{
+  "name": "wdmg/yii2-geo",
+  "description": "Geo module with countries and cities",
+  "keywords": ["yii2", "yii2-geo", "geo", "countries", "city", "geo system", "wdmg"],
+  "type": "yii2-extension",
+  "license": "MIT",
+  "version": "1.0.0",
+  "homepage": "https://github.com/wdmg/yii2-geo",
+  "authors": [
+    {
+      "name": "Alexsander Vyshnyvetskyy",
+      "email": "alex.vyshnyvetskyy@gmail.com"
+    },
+    {
+      "name": "W.D.M.Group, Ukraine",
+      "email": "wdmg.com.ua@gmail.com"
+    }
+  ],
+  "require": {
+    "yiisoft/yii2": "*"
+  },
+  "minimum-stability": "dev",
+  "autoload": {
+    "psr-4": {
+      "wdmg\\geo\\": ""
+    }
+  },
+  "extra": {
+    "bootstrap": "wdmg\\geo\\Bootstrap"
+  }
+}
