@@ -23,7 +23,7 @@ class InitController extends Controller
         $welcome =
             '╔════════════════════════════════════════════════╗'. "\n" .
             '║                                                ║'. "\n" .
-            '║              GEO MODULE, v.1.0.0               ║'. "\n" .
+            '║              GEO MODULE, v.1.0.1               ║'. "\n" .
             '║          by Alexsander Vyshnyvetskyy           ║'. "\n" .
             '║         (c) 2018 W.D.M.Group, Ukraine          ║'. "\n" .
             '║                                                ║'. "\n" .
