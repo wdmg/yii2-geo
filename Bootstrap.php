@@ -3,7 +3,7 @@
 namespace wdmg\geo;
 
 use yii\base\BootstrapInterface;
-
+use Yii;
 
 class Bootstrap implements BootstrapInterface
 {
@@ -12,5 +12,7 @@ class Bootstrap implements BootstrapInterface
         $app->urlManager->addRules([
             //
         ], false);
+        $app->controllerMap["migrate"]["class"] = 'yii\console\controllers\MigrateController';
+        $app->controllerMap["migrate"]["migrationNamespaces"][] = 'wdmg\geo\migrations';
     }
 }
