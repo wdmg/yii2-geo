@@ -20,12 +20,13 @@ class InitController extends Controller
 
     public function actionIndex($params = null)
     {
+        $version = Yii::$app->controller->module->version;
         $welcome =
             '╔════════════════════════════════════════════════╗'. "\n" .
             '║                                                ║'. "\n" .
-            '║              GEO MODULE, v.1.0.1               ║'. "\n" .
+            '║              GEO MODULE, v.'.$version.'                 ║'. "\n" .
             '║          by Alexsander Vyshnyvetskyy           ║'. "\n" .
-            '║         (c) 2018 W.D.M.Group, Ukraine          ║'. "\n" .
+            '║         (c) 2019 W.D.M.Group, Ukraine          ║'. "\n" .
             '║                                                ║'. "\n" .
             '╚════════════════════════════════════════════════╝';
         echo $name = $this->ansiFormat($welcome . "\n\n", Console::FG_GREEN);
