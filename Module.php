@@ -34,7 +34,7 @@ class Module extends \yii\base\Module
         parent::init();
 
         if (Yii::$app instanceof \yii\console\Application) {
-            $this->controllerNamespace = 'admin\geo\commands';
+            $this->controllerNamespace = 'wdmg\geo\commands';
         }
     }
 }

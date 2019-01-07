@@ -14,6 +14,7 @@ class m181216_211425_geo_translations extends Migration
      */
     public function safeUp()
     {
+
         $tableOptions = null;
         if ($this->db->driverName === 'mysql') {
             $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
@@ -28,13 +29,6 @@ class m181216_211425_geo_translations extends Migration
             'created_at'   => $this->dateTime()->defaultExpression('CURRENT_TIMESTAMP'), // Created date (timestamp)
             'updated_at'   => $this->datetime()->defaultExpression('CURRENT_TIMESTAMP'), // Updated date (timestamp)
         ], $tableOptions);
-
-        $geo_translations = json_decode(file_get_contents(__DIR__ . '/geo_translations.json'), true);
-        foreach ($geo_translations as $translation) {
-            $translation['created_at'] = date("Y-m-d H:i:s");
-            $translation['updated_at'] = date("Y-m-d H:i:s");
-            $this->insert('{{%geo_translations}}', $translation);
-        }
 
         $this->createIndex(
             'idx_geo_translations',
