@@ -22,6 +22,7 @@ To add a module to the project, add the following data in your configuration fil
         ...
         'geo' => [
             'class' => 'wdmg\geo\Module',
+            'routePrefix' => 'admin'
         ],
         ...
     ],
