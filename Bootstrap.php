@@ -26,4 +26,5 @@ class Bootstrap implements BootstrapInterface
         /*$app->controllerMap["migrate"]["class"] = 'yii\console\controllers\MigrateController';
         $app->controllerMap["migrate"]["migrationNamespaces"][] = 'wdmg\geo\migrations';*/
     }
+
 }

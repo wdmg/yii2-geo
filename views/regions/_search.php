@@ -12,7 +12,7 @@ use yii\widgets\ActiveForm;
     <div class="panel-heading">
         <h5 class="panel-title">
             <a data-toggle="collapse" href="#geoRegionsSearch">
-                Regions search
+                <?= Yii::t('app/modules/geo', 'Regions search') ?>
             </a>
         </h5>
     </div>

@@ -1,0 +1,55 @@
+<?php
+
+return [
+    'Geo Module' => 'ГЕО-модуль',
+
+    'View Countries' => 'Список стран',
+    'View Regions' => 'Список регионов',
+    'View Cities' => 'Список городов',
+    'View Translations' => 'Список переводов',
+
+    'Countries' => 'Страны',
+    'Regions' => 'Регионы',
+    'Cities' => 'Города',
+    'Translations' => 'Переводы',
+
+    'Country' => 'Страна',
+    'Region' => 'Регион',
+    'City' => 'Город',
+    'Translation' => 'Перевод',
+
+    'Countries search' => 'Поиск по странам',
+    'Regions search' => 'Поиск по регионам',
+    'Cities search' => 'Поиск по городам',
+    'Translations search' => 'Поиск по переводам',
+
+    'Add new country' => 'Добавить ноую страну',
+    'Add new region' => 'Добавить новый регион',
+    'Add new city' => 'Добавить новый город',
+    'Add new translation' => 'Добавить новый перевод',
+
+    'View country: {name}' => 'Просмотр страны: {name}',
+    'View region: {name}' => 'Просмотр региона: {name}',
+    'View city: {name}' => 'Просмотр города: {name}',
+    'View translation: {name}' => 'Просмотр перевода: {name}',
+
+    'Edit country: {name}' => 'Редактирование страны: {name}',
+    'Edit region: {name}' => 'Редактирование региона: {name}',
+    'Edit city: {name}' => 'Редактирование города: {name}',
+    'Edit translation: {name}' => 'Редактирование перевода: {name}',
+
+    'Edit' => 'Редактировать',
+    'Search' => 'Поиск',
+    'Save' => 'Сохранить',
+    'Cancel' => 'Отмена',
+    'Reset' => 'Сбросить',
+    'Delete' => 'Удалить',
+    'Are you sure you want to delete this item?' => 'Вы уверены, что хотите удалить этот элемент?',
+
+    'Save country' => 'Сохранить страну',
+    'Save region' => 'Сохранить регион',
+    'Save city' => 'Сохранить город',
+    'Save translation' => 'Сохранить перевод',
+];
+
+?>

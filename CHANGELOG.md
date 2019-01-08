@@ -1,6 +1,10 @@
 Changelog
 =========
 
+## 1.0.3 (2019-01-09)
+ * Added base module localization
+ * Added models, controllers, views
+
 ## 1.0.2 (2019-01-06)
  * Added base module routing
  
