@@ -1,28 +1,20 @@
-<div class="page-header">
-    <h1><span class="text-uppercase"><?= $this->context->module->id ?></span> <small class="text-muted pull-right">[v.<?= $this->context->module->version ?>]</small></h1>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <h5 class="panel-title">
-            <a data-toggle="collapse" href="#collapsePanel1">
-                Debug Data
-            </a>
-        </h5>
+<?php
+
+use yii\helpers\Html;
+/* @var $this yii\web\View */
+
+$this->title = Yii::t('app/modules/geo', 'Geo Module');
+$this->params['breadcrumbs'][] = $this->title;
+?>
+    <div class="page-header">
+        <h1><?= Html::encode($this->title) ?> <small class="text-muted pull-right">[v.<?= $this->context->module->version ?>]</small></h1>
     </div>
-    <div id="collapsePanel1" class="panel-collapse collapse">
-        <div class="panel-body">
-            <dl class="dl-horizontal" style="margin-bottom:0;">
-                <dt>Action ID:</dt>
-                <dd><code><?= $this->context->action->id ?> (<?= $this->context->action->uniqueId ?>)</code></dd>
-                <dt>Controller ID:</dt>
-                <dd><code><?= get_class($this->context) ?></code></dd>
-                <dt>Path to this view:</dt>
-                <dd><code><?= __FILE__ ?></code></dd>
-                <dt>Module vendor:</dt>
-                <dd><code><?= $this->context->module->vendor ?></code></dd>
-                <dt>Routing prefix:</dt>
-                <dd><code><?= $this->context->module->routePrefix ?></code></dd>
-            </dl>
-        </div>
+
+    <div>
+        <?= Html::a(Yii::t('app/modules/geo', 'View Countries'), ['countries/index'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('app/modules/geo', 'View Regions'), ['regions/index'], ['class' => 'btn btn-danger']) ?>
+        <?= Html::a(Yii::t('app/modules/geo', 'View Cities'), ['cities/index'], ['class' => 'btn btn-info']) ?>
+        <?= Html::a(Yii::t('app/modules/geo', 'View Translations'), ['translations/index'], ['class' => 'btn btn-warning']) ?>
     </div>
-</div>
+
+<?php echo $this->render('../_debug'); ?>

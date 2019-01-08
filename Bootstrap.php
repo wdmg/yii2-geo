@@ -18,6 +18,7 @@ class Bootstrap implements BootstrapInterface
         $app->getUrlManager()->addRules(
             [
                 $prefix.'<_m>' => '<_m>/admin/index',
+                $prefix.'<_m>/<_c>' => '<_m>/<_c>/index',
             ],
             false
         );
