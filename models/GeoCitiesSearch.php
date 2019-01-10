@@ -12,13 +12,23 @@ use wdmg\geo\models\GeoCities;
 class GeoCitiesSearch extends GeoCities
 {
     /**
+     * @var string the title of geo_countries table
+     */
+    public $country;
+
+    /**
+     * @var string the title of geo_regions table
+     */
+    public $region;
+
+    /**
      * {@inheritdoc}
      */
     public function rules()
     {
         return [
             [['id', 'country_id', 'region_id', 'is_capital', 'is_published'], 'integer'],
-            [['title', 'slug', 'created_at', 'updated_at'], 'safe'],
+            [['title', 'country', 'region', 'slug', 'created_at', 'updated_at'], 'safe'],
         ];
     }
 

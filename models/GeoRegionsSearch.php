@@ -12,13 +12,18 @@ use wdmg\geo\models\GeoRegions;
 class GeoRegionsSearch extends GeoRegions
 {
     /**
+     * @var string the title of geo_countries table
+     */
+    public $country;
+
+    /**
      * {@inheritdoc}
      */
     public function rules()
     {
         return [
             [['id', 'country_id', 'is_published'], 'integer'],
-            [['title', 'slug', 'created_at', 'updated_at'], 'safe'],
+            [['title', 'country', 'slug', 'created_at', 'updated_at'], 'safe'],
         ];
     }
 

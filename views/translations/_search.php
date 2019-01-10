@@ -12,7 +12,7 @@ use yii\widgets\ActiveForm;
     <div class="panel-heading">
         <h5 class="panel-title">
             <a data-toggle="collapse" href="#geoTranslationsSearch">
-                <?= Yii::t('app/modules/geo', 'Translations search') ?>
+                <span class="glyphicon glyphicon-search"></span> <?= Yii::t('app/modules/geo', 'Translations search') ?>
             </a>
         </h5>
     </div>

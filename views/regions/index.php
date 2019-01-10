@@ -25,15 +25,70 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
-            'country_id',
+            //'id',
+            [
+                'attribute' => 'country_id',
+                'header' => Yii::t('app/modules/geo', 'Country'),
+                'value' => 'country.title',
+            ],
             'title',
             'slug',
-            'created_at',
-            //'updated_at',
-            //'is_published',
-
-            ['class' => 'yii\grid\ActionColumn'],
+            [
+                'attribute' => 'created_at',
+                'format' => 'datetime',
+                'headerOptions' => [
+                    'class' => 'text-center'
+                ],
+                'contentOptions' => [
+                    'class' => 'text-center'
+                ]
+            ],
+            [
+                'attribute' => 'is_published',
+                'format' => 'html',
+                'filter' => false,
+                'headerOptions' => [
+                    'class' => 'text-center'
+                ],
+                'contentOptions' => [
+                    'class' => 'text-center'
+                ],
+                'value' => function($data) {
+                    if ($data->is_published)
+                        return '<span class="glyphicon glyphicon-check text-success"></span>';
+                    else
+                        return '<span class="glyphicon glyphicon-check text-muted"></span>';
+                },
+            ],
+            [
+                'class' => 'yii\grid\ActionColumn',
+                'header' => Yii::t('app/modules/geo', 'Actions'),
+                'contentOptions' => [
+                    'class' => 'text-center'
+                ],
+            ],
+        ],
+        'pager' => [
+            'options' => [
+                'class' => 'pager',
+            ],
+            'maxButtonCount' => 5,
+            'activePageCssClass' => 'active',
+            'linkContainerOptions' => [
+                'class' => 'linkContainerOptions',
+            ],
+            'linkOptions' => [
+                'class' => 'linkOptions',
+            ],
+            'disableCurrentPageButton' => true,
+            'prevPageCssClass' => '',
+            'nextPageCssClass' => '',
+            'firstPageCssClass' => 'previous',
+            'lastPageCssClass' => 'next',
+            'firstPageLabel' => Yii::t('app/modules/geo', 'First page'),
+            'lastPageLabel'  => Yii::t('app/modules/geo', 'Last page'),
+            'prevPageLabel'  => Yii::t('app/modules/geo', '&larr; Prev page'),
+            'nextPageLabel'  => Yii::t('app/modules/geo', 'Next page &rarr;')
         ],
     ]); ?>
 

@@ -25,15 +25,69 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
-            'language',
-            'source_id',
-            'source_type',
-            'translation',
-            //'created_at',
-            //'updated_at',
+            //'id',
+            [
+                'attribute' => 'source_id',
+                'header' => Yii::t('app/modules/geo', 'Source'),
+                'value' => 'source.title',
+            ],
+            [
+                'attribute' => 'source_type',
+                'header' => Yii::t('app/modules/geo', 'Source Type'),
+                'value' => 'source.title',
+                'value' => function($data, $model) {
+                    if ($data->source_type == wdmg\geo\models\GeoTranslations::TR_COUNTRY)
+                        return Yii::t('app/modules/geo','Country');
+                    elseif ($data->source_type == wdmg\geo\models\GeoTranslations::TR_REGION)
+                        return Yii::t('app/modules/geo','Region');
+                    elseif ($data->source_type == wdmg\geo\models\GeoTranslations::TR_CITY)
+                        return Yii::t('app/modules/geo','City');
+                    else
+                        return false;
 
-            ['class' => 'yii\grid\ActionColumn'],
+                },
+            ],
+            'translation',
+            'language',
+            [
+                'attribute' => 'created_at',
+                'format' => 'datetime',
+                'headerOptions' => [
+                    'class' => 'text-center'
+                ],
+                'contentOptions' => [
+                    'class' => 'text-center'
+                ]
+            ],
+            [
+                'class' => 'yii\grid\ActionColumn',
+                'header' => Yii::t('app/modules/geo', 'Actions'),
+                'contentOptions' => [
+                    'class' => 'text-center'
+                ],
+            ],
+        ],
+        'pager' => [
+            'options' => [
+                'class' => 'pager',
+            ],
+            'maxButtonCount' => 5,
+            'activePageCssClass' => 'active',
+            'linkContainerOptions' => [
+                'class' => 'linkContainerOptions',
+            ],
+            'linkOptions' => [
+                'class' => 'linkOptions',
+            ],
+            'disableCurrentPageButton' => true,
+            'prevPageCssClass' => '',
+            'nextPageCssClass' => '',
+            'firstPageCssClass' => 'previous',
+            'lastPageCssClass' => 'next',
+            'firstPageLabel' => Yii::t('app/modules/geo', 'First page'),
+            'lastPageLabel'  => Yii::t('app/modules/geo', 'Last page'),
+            'prevPageLabel'  => Yii::t('app/modules/geo', '&larr; Prev page'),
+            'nextPageLabel'  => Yii::t('app/modules/geo', 'Next page &rarr;')
         ],
     ]); ?>
 

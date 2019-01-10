@@ -18,6 +18,13 @@ use Yii;
 class GeoTranslations extends \yii\db\ActiveRecord
 {
     /**
+     * @const int the code of translation type (countries, regions or cities)
+     */
+    const TR_COUNTRY = 10;
+    const TR_REGION = 20;
+    const TR_CITY = 30;
+
+    /**
      * {@inheritdoc}
      */
     public static function tableName()
@@ -52,5 +59,35 @@ class GeoTranslations extends \yii\db\ActiveRecord
             'created_at' => Yii::t('app/modules/geo', 'Created At'),
             'updated_at' => Yii::t('app/modules/geo', 'Updated At'),
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    /*public function getSourceType()
+    {
+        if($this->source_type == 10)
+            return self::COUNTRY;
+        elseif ($this->source_type == 20)
+            return self::REGION;
+        elseif ($this->source_type == 30)
+            return self::CITY;
+        else
+            return '';
+    }*/
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getSource()
+    {
+        if($this->source_type == 10)
+            return $this->hasOne(GeoCountries::className(), ['id' => 'source_id']);
+        elseif ($this->source_type == 20)
+            return $this->hasOne(GeoRegions::className(), ['id' => 'source_id']);
+        elseif ($this->source_type == 30)
+            return $this->hasOne(GeoCities::className(), ['id' => 'source_id']);
+        else
+            return '';
     }
 }

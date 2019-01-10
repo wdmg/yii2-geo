@@ -12,13 +12,18 @@ use wdmg\geo\models\GeoTranslations;
 class GeoTranslationsSearch extends GeoTranslations
 {
     /**
+     * @var string the title of source (geo_countries.title, geo_regions.title or geo_cities.title)
+     */
+    public $source;
+
+    /**
      * {@inheritdoc}
      */
     public function rules()
     {
         return [
             [['id', 'source_id', 'source_type'], 'integer'],
-            [['language', 'translation', 'created_at', 'updated_at'], 'safe'],
+            [['language', 'source', 'translation', 'created_at', 'updated_at'], 'safe'],
         ];
     }
 

@@ -12,7 +12,7 @@ use yii\widgets\ActiveForm;
     <div class="panel-heading">
         <h5 class="panel-title">
             <a data-toggle="collapse" href="#geoRegionsSearch">
-                <?= Yii::t('app/modules/geo', 'Regions search') ?>
+                <span class="glyphicon glyphicon-search"></span> <?= Yii::t('app/modules/geo', 'Regions search') ?>
             </a>
         </h5>
     </div>
@@ -40,7 +40,7 @@ use yii\widgets\ActiveForm;
 
                 <?= $form->field($model, 'updated_at') ?>
 
-                <?= echo $form->field($model, 'is_published') ?>
+                <?= $form->field($model, 'is_published') ?>
 
                 <div class="form-group">
                     <?= Html::submitButton(Yii::t('app/modules/geo', 'Search'), ['class' => 'btn btn-primary']) ?>
