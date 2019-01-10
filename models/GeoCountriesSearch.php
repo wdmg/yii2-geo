@@ -64,8 +64,7 @@ class GeoCountriesSearch extends GeoCountries
             'is_published' => $this->is_published,
         ]);
 
-        $query->andFilterWhere(['like', 'title', $this->title])
-            ->andFilterWhere(['like', 'slug', $this->slug]);
+        $query->andFilterWhere(['like', 'title', $this->title])->andFilterWhere(['like', 'slug', $this->slug]);
 
         return $dataProvider;
     }

@@ -5,6 +5,7 @@ namespace wdmg\geo\models;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use wdmg\geo\models\GeoRegions;
+use wdmg\geo\models\GeoCountries;
 
 /**
  * GeoRegionsSearch represents the model behind the search form of `app\models\GeoRegions`.
@@ -22,7 +23,8 @@ class GeoRegionsSearch extends GeoRegions
     public function rules()
     {
         return [
-            [['id', 'country_id', 'is_published'], 'integer'],
+            [['country_id'], 'string'],
+            [['id', 'is_published'], 'integer'],
             [['title', 'country', 'slug', 'created_at', 'updated_at'], 'safe'],
         ];
     }
@@ -48,7 +50,6 @@ class GeoRegionsSearch extends GeoRegions
         $query = GeoRegions::find();
 
         // add conditions that should always apply here
-
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
@@ -64,14 +65,20 @@ class GeoRegionsSearch extends GeoRegions
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'country_id' => $this->country_id,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
             'is_published' => $this->is_published,
         ]);
 
-        $query->andFilterWhere(['like', 'title', $this->title])
-            ->andFilterWhere(['like', 'slug', $this->slug]);
+        // custom search: get country_id requested by title
+        if(!is_int($this->country_id) && !empty($this->country_id)) {
+            $country_id = GeoCountries::find()->andFilterWhere(['like', 'title', $this->country_id])->one();
+            $query->andFilterWhere(['country_id' => $country_id]);
+        } else {
+            $query->andFilterWhere(['country_id' => $this->country_id]);
+        }
+
+        $query->andFilterWhere(['like', 'title', $this->title])->andFilterWhere(['like', 'slug', $this->slug]);
 
         return $dataProvider;
     }
