@@ -37,17 +37,13 @@ class Module extends \yii\base\Module
             $this->controllerNamespace = 'wdmg\geo\commands';
         }
 
-        Yii::$app->language = 'ru-RU';
-
-        // Register custom translations for this module
+        // Register translations
         $this->registerTranslations();
     }
 
     // Registers translations for the module
     public function registerTranslations()
     {
-
-        /**This registers translations for the Foo module **/
         Yii::$app->i18n->translations['app/modules/geo*'] = [
             'class' => 'yii\i18n\PhpMessageSource',
             'sourceLanguage' => 'en-US',

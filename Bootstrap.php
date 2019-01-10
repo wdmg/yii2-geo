@@ -22,7 +22,7 @@ class Bootstrap implements BootstrapInterface
             ],
             false
         );
-        
+
     }
 
 }
