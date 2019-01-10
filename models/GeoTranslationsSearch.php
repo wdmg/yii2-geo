@@ -86,7 +86,7 @@ class GeoTranslationsSearch extends GeoTranslations
             $source_id = GeoCities::find()->andFilterWhere(['like', 'title', $this->source_id])->one();
             if(intval($source_id["id"]) > 0)
                 $query->orWhere(['AND', ['source_id' => intval($source_id["id"]), 'source_type' => self::TR_CITY]]);
-            
+
         } else {
             $query->andFilterWhere([
                 'source_type' => $this->source_type,

@@ -22,6 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
+        'layout' => '{summary}<br\/>{items}<br\/>{summary}<br\/><div class="text-center">{pager}<div>',
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
@@ -69,7 +70,7 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
         'pager' => [
             'options' => [
-                'class' => 'pager',
+                'class' => 'pagination',
             ],
             'maxButtonCount' => 5,
             'activePageCssClass' => 'active',
@@ -79,7 +80,6 @@ $this->params['breadcrumbs'][] = $this->title;
             'linkOptions' => [
                 'class' => 'linkOptions',
             ],
-            'disableCurrentPageButton' => true,
             'prevPageCssClass' => '',
             'nextPageCssClass' => '',
             'firstPageCssClass' => 'previous',
