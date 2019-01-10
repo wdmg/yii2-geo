@@ -50,6 +50,36 @@ return [
     'Save region' => 'Сохранить регион',
     'Save city' => 'Сохранить город',
     'Save translation' => 'Сохранить перевод',
+
+    'First page' => 'Первая страница',
+    'Last page' => 'Последняя страница',
+    '&larr; Prev page' => '&larr; Предыдущая страница',
+    'Next page &rarr;' => 'Следующая сраница &rarr;',
+
+
+    'Actions' => 'Действия',
+    'ID' => 'ИД',
+    'Title' => 'Заголовок',
+    'Slug' => 'Слаг',
+    'Created At' => 'Создано',
+    'Updated At' => 'Обновлено',
+    'Is Published' => 'На сайте?',
+    'Is Capital' => 'Столица?',
+
+    'Country ID' => 'Страна, ИД',
+    'Region ID' => 'Регион, ИД',
+    'Citie ID' => 'Город, ИД',
+    'Translation' => 'Перевод',
+    'Translation ID' => 'Перевод, ИД',
+    'Language' => 'Язык',
+    'Source' => 'Исходник',
+    'Source ID' => 'Исходник, ИД',
+    'Source Type' => 'Тип объекта',
+
+    '&larr; Back to list' => '&larr; Назад к списку',
+    '&larr; Back to module' => '&larr; Назад к модулю',
+
+
 ];
 
 ?>
