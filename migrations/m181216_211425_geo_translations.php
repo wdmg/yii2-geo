@@ -39,6 +39,34 @@ class m181216_211425_geo_translations extends Migration
             ]
         );
 
+        /*$this->addForeignKey(
+            'fk_translations_to_countries',
+            '{{%geo_translations%}}',
+            'source_id',
+            '{{%geo_countries%}}',
+            'id',
+            'SET NULL',
+            'CASCADE'
+        );
+        $this->addForeignKey(
+            'fk_translations_to_regions',
+            '{{%geo_translations%}}',
+            'source_id',
+            '{{%geo_regions%}}',
+            'id',
+            'SET NULL',
+            'CASCADE'
+        );
+        $this->addForeignKey(
+            'fk_translations_to_cities',
+            '{{%geo_translations%}}',
+            'source_id',
+            '{{%geo_cities%}}',
+            'id',
+            'SET NULL',
+            'CASCADE'
+        );*/
+
     }
 
 
@@ -47,6 +75,18 @@ class m181216_211425_geo_translations extends Migration
      */
     public function safeDown()
     {
+        /*$this->dropForeignKey(
+            'fk_translations_to_countries',
+            '{{%geo_translations%}}'
+        );
+        $this->dropForeignKey(
+            'fk_translations_to_regions',
+            '{{%geo_translations%}}'
+        );
+        $this->dropForeignKey(
+            'fk_translations_to_cities',
+            '{{%geo_translations%}}'
+        );*/
         $this->truncateTable('{{%geo_translations%}}');
         $this->dropTable('{{%geo_translations%}}');
     }
