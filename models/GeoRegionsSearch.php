@@ -13,7 +13,7 @@ use wdmg\geo\models\GeoCountries;
 class GeoRegionsSearch extends GeoRegions
 {
     /**
-     * @var string the title of geo_countries table
+     * @var object, model `GeoCountries`
      */
     public $country;
 

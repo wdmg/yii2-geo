@@ -14,8 +14,9 @@ use wdmg\geo\models\GeoCities;
  */
 class GeoTranslationsSearch extends GeoTranslations
 {
+
     /**
-     * @var string the title of source (geo_countries.title, geo_regions.title or geo_cities.title)
+     * @var object, model `GeoCountries`, `GeoRegions` or `GeoCities`
      */
     public $source;
 

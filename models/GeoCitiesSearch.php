@@ -14,12 +14,12 @@ use wdmg\geo\models\GeoRegions;
 class GeoCitiesSearch extends GeoCities
 {
     /**
-     * @var string the title of geo_countries table
+     * @var object, model `GeoCountries`
      */
     public $country;
 
     /**
-     * @var string the title of geo_regions table
+     * @var object, model `GeoRegions`
      */
     public $region;
 
