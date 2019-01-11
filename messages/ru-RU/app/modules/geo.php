@@ -23,7 +23,7 @@ return [
     'Cities search' => 'Поиск по городам',
     'Translations search' => 'Поиск по переводам',
 
-    'Add new country' => 'Добавить ноую страну',
+    'Add new country' => 'Добавить новую страну',
     'Add new region' => 'Добавить новый регион',
     'Add new city' => 'Добавить новый город',
     'Add new translation' => 'Добавить новый перевод',

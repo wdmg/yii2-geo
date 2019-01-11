@@ -22,7 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= GridView::widget([
             'dataProvider' => $dataProvider,
             'filterModel' => $searchModel,
-            'layout' => '{summary}<br\/>{items}<br\/>{summary}<br\/><div class="text-center">{pager}<div>',
+            'layout' => '{summary}<br\/>{items}<br\/>{summary}<br\/><div class="text-center">{pager}</div>',
             'columns' => [
                 ['class' => 'yii\grid\SerialColumn'],
 
