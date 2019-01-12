@@ -19,14 +19,12 @@ use Yii;
  */
 class GeoCountries extends \yii\db\ActiveRecord
 {
-/*
-    public $id; // Primary key ID
-    public $title; // Region title (string)
-    public $slug; // Region slug (string)
-    public $created_at; // Created date (timestamp)
-    public $updated_at; // Updated date (timestamp)
-    public $is_published; // Is published flag (0/1)
-*/
+
+    /**
+     * @var string of translations
+     */
+    public $translations;
+
     /**
      * {@inheritdoc}
      */
@@ -62,6 +60,7 @@ class GeoCountries extends \yii\db\ActiveRecord
             'created_at' => Yii::t('app/modules/geo', 'Created At'),
             'updated_at' => Yii::t('app/modules/geo', 'Updated At'),
             'is_published' => Yii::t('app/modules/geo', 'Is Published'),
+            'translations' => Yii::t('app/modules/geo', 'Translations'),
         ];
     }
 
@@ -80,4 +79,5 @@ class GeoCountries extends \yii\db\ActiveRecord
     {
         return $this->hasMany(GeoRegions::className(), ['country_id' => 'id']);
     }
+
 }

@@ -30,7 +30,31 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute' => 'source_id',
                 'header' => Yii::t('app/modules/geo', 'Source'),
-                'value' => 'source.title',
+                'format' => 'raw',
+                'value' => function($data, $model) {
+                    if ($data->source_id) {
+                        if ($data->source_type == wdmg\geo\models\GeoTranslations::TR_COUNTRY) {
+                            return Html::a($data->source['title'], ['../admin/geo/countries/view/?id='.$data->source_id], [
+                                'target' => '_blank',
+                                'data-pjax' => 0
+                            ]);
+                        } elseif ($data->source_type == wdmg\geo\models\GeoTranslations::TR_REGION) {
+                            return Html::a($data->source['title'], ['../admin/geo/regions/view/?id='.$data->source_id], [
+                                'target' => '_blank',
+                                'data-pjax' => 0
+                            ]);
+                        } elseif ($data->source_type == wdmg\geo\models\GeoTranslations::TR_CITY) {
+                            return Html::a($data->source['title'], ['../admin/geo/cities/view/?id='.$data->source_id], [
+                                'target' => '_blank',
+                                'data-pjax' => 0
+                            ]);
+                        } else {
+                            return $data->source['title'];
+                        }
+                    } else {
+                        return null;
+                    }
+                }
             ],
             [
                 'attribute' => 'source_type',

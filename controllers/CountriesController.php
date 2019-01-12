@@ -5,6 +5,7 @@ namespace wdmg\geo\controllers;
 use Yii;
 use wdmg\geo\models\GeoCountries;
 use wdmg\geo\models\GeoCountriesSearch;
+use wdmg\geo\models\GeoTranslations;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -62,8 +63,14 @@ class CountriesController extends Controller
      */
     public function actionView($id)
     {
+        $model = $this->findModel($id);
+
+        $translations = GeoTranslations::find()->select(['translation', 'language'])->where(['source_id' => $id, 'source_type' => 10])->all();
+        if(!empty($translations))
+            $model->translations = $translations;
+
         return $this->render('view', [
-            'model' => $this->findModel($id),
+            'model' => $model
         ]);
     }
 

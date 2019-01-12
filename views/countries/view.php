@@ -24,10 +24,32 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'title',
+            [
+                'attribute' => 'translations',
+                'format' => 'raw',
+                'value' => function($model) {
+                    $values = '';
+                    foreach ($model->translations as $key => $value) {
+                        $values .= $value->translation . ' ('.$value->language.')';
+                        if(intval($key+1) < count($model->translations))
+                            $values .= ', ';
+                    }
+                    return $values;
+                }
+            ],
             'slug',
             'created_at',
             'updated_at',
-            'is_published',
+            [
+                'attribute' => 'is_published',
+                'format' => 'html',
+                'value' => function($model) {
+                    if ($model->is_published)
+                        return '<span class="glyphicon glyphicon-check text-success"></span>';
+                    else
+                        return '<span class="glyphicon glyphicon-check text-muted"></span>';
+                },
+            ],
         ],
     ]) ?>
 

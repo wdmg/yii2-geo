@@ -20,6 +20,12 @@ use Yii;
  */
 class GeoRegions extends \yii\db\ActiveRecord
 {
+
+    /**
+     * @var string of translations
+     */
+    public $translations;
+
     /**
      * {@inheritdoc}
      */
@@ -57,6 +63,7 @@ class GeoRegions extends \yii\db\ActiveRecord
             'created_at' => Yii::t('app/modules/geo', 'Created At'),
             'updated_at' => Yii::t('app/modules/geo', 'Updated At'),
             'is_published' => Yii::t('app/modules/geo', 'Is Published'),
+            'translations' => Yii::t('app/modules/geo', 'Translations'),
         ];
     }
 

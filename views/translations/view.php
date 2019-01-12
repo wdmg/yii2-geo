@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model app\models\GeoTranslations */
 
 $this->title = Yii::t('app/modules/geo', 'View translation: {name}', [
-    'name' => $model->id,
+    'name' => '#'.$model->id,
 ]);
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app/modules/geo', 'Geo Module'), 'url' => ['../admin/geo']];
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app/modules/geo', 'Translations'), 'url' => ['index']];
@@ -23,9 +23,57 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'language',
-            'source_id',
-            'source_type',
+            [
+                'attribute' => 'language',
+                'value' => function($model) {
+                    if(class_exists('Locale'))
+                        return \Locale::getDisplayLanguage($model->language, Yii::$app->language). ' ('.$model->language.')';
+                    else
+                        return $model->language;
+                }
+            ],
+            [
+                'attribute' => 'source_id',
+                'format' => 'raw',
+                'label' => Yii::t('app/modules/geo', 'Source'),
+                'value' => function($model) {
+                    if($model->source_id) {
+                        if ($model->source_type == wdmg\geo\models\GeoTranslations::TR_COUNTRY) {
+                            return Html::a($model->source['title'], ['../admin/geo/countries/view/?id='.$model->source_id], [
+                                    'target' => '_blank',
+                                    'data-pjax' => 0
+                                ]) . ' (ID: '.$model->source_id.')';
+                        } elseif ($model->source_type == wdmg\geo\models\GeoTranslations::TR_REGION) {
+                            return Html::a($model->source['title'], ['../admin/geo/regions/view/?id='.$model->source_id], [
+                                    'target' => '_blank',
+                                    'data-pjax' => 0
+                                ]) . ' (ID: '.$model->source_id.')';
+                        } elseif ($model->source_type == wdmg\geo\models\GeoTranslations::TR_CITY) {
+                            return Html::a($model->source['title'], ['../admin/geo/cities/view/?id='.$model->source_id], [
+                                    'target' => '_blank',
+                                    'data-pjax' => 0
+                                ]) . ' (ID: '.$model->source_id.')';
+                        } else {
+                            return $model->source_id;
+                        }
+                    } else {
+                        return null;
+                    }
+                },
+            ],
+            [
+                'attribute' => 'source_type',
+                'value' => function($model) {
+                    if ($model->source_type == wdmg\geo\models\GeoTranslations::TR_COUNTRY)
+                        return Yii::t('app/modules/geo','Country');
+                    elseif ($model->source_type == wdmg\geo\models\GeoTranslations::TR_REGION)
+                        return Yii::t('app/modules/geo','Region');
+                    elseif ($model->source_type == wdmg\geo\models\GeoTranslations::TR_CITY)
+                        return Yii::t('app/modules/geo','City');
+                    else
+                        return false;
+                },
+            ],
             'translation',
             'created_at',
             'updated_at',

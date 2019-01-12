@@ -22,6 +22,12 @@ use Yii;
  */
 class GeoCities extends \yii\db\ActiveRecord
 {
+
+    /**
+     * @var string of translations
+     */
+    public $translations;
+
     /**
      * {@inheritdoc}
      */
@@ -61,6 +67,7 @@ class GeoCities extends \yii\db\ActiveRecord
             'updated_at' => Yii::t('app/modules/geo', 'Updated At'),
             'is_capital' => Yii::t('app/modules/geo', 'Is Capital'),
             'is_published' => Yii::t('app/modules/geo', 'Is Published'),
+            'translations' => Yii::t('app/modules/geo', 'Translations'),
         ];
     }
 

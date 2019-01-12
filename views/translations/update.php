@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $model app\models\GeoTranslations */
 
 $this->title = Yii::t('app/modules/geo', 'Edit translation: {name}', [
-    'name' => $model->id,
+    'name' => '#'.$model->id,
 ]);
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app/modules/geo', 'Geo Module'), 'url' => ['../admin/geo']];
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app/modules/geo', 'Translations'), 'url' => ['index']];

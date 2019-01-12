@@ -22,14 +22,71 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'country_id',
-            'region_id',
+            [
+                'attribute' => 'country_id',
+                'format' => 'raw',
+                'label' => Yii::t('app/modules/geo', 'Country'),
+                'value' => function($model) {
+                    if($model->country_id)
+                        return Html::a($model->country['title'], ['../admin/geo/countries/view/?id='.$model->country_id], [
+                                'target' => '_blank',
+                                'data-pjax' => 0
+                            ]) . ' (ID: '.$model->country_id.')';
+                    else
+                        return null;
+                },
+            ],
+            [
+                'attribute' => 'region_id',
+                'format' => 'raw',
+                'label' => Yii::t('app/modules/geo', 'Region'),
+                'value' => function($model) {
+                    if($model->region_id)
+                        return Html::a($model->region['title'], ['../admin/geo/regions/view/?id='.$model->region_id], [
+                                'target' => '_blank',
+                                'data-pjax' => 0
+                            ]) . ' (ID: '.$model->region_id.')';
+                    else
+                        return null;
+                },
+            ],
             'title',
+            [
+                'attribute' => 'translations',
+                'format' => 'raw',
+                'value' => function($model) {
+                    $values = '';
+                    foreach ($model->translations as $key => $value) {
+                        $values .= $value->translation . ' ('.$value->language.')';
+                        if(intval($key+1) < count($model->translations))
+                            $values .= ', ';
+                    }
+                    return $values;
+                }
+            ],
             'slug',
             'created_at',
             'updated_at',
-            'is_capital',
-            'is_published',
+            [
+                'attribute' => 'is_capital',
+                'format' => 'html',
+                'value' => function($model) {
+                    if ($model->is_capital)
+                        return '<span class="glyphicon glyphicon-check text-success"></span>';
+                    else
+                        return '<span class="glyphicon glyphicon-check text-muted"></span>';
+                },
+            ],
+            [
+                'attribute' => 'is_published',
+                'format' => 'html',
+                'value' => function($model) {
+                    if ($model->is_published)
+                        return '<span class="glyphicon glyphicon-check text-success"></span>';
+                    else
+                        return '<span class="glyphicon glyphicon-check text-muted"></span>';
+                },
+            ],
         ],
     ]) ?>
 

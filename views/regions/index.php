@@ -30,7 +30,16 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute' => 'country_id',
                 'header' => Yii::t('app/modules/geo', 'Country'),
-                'value' => 'country.title',
+                'format' => 'raw',
+                'value' => function($model) {
+                    if($model->country_id)
+                        return Html::a($model->country['title'], ['../admin/geo/countries/view/?id='.$model->country_id], [
+                            'target' => '_blank',
+                            'data-pjax' => 0
+                        ]);
+                    else
+                        return null;
+                },
             ],
             'title',
             'slug',
