@@ -7,9 +7,9 @@ use yii\web\Controller;
 use yii\filters\AccessControl;
 
 /**
- * AdminController controller for the `geo` module
+ * GeoController controller for the `geo` module
  */
-class AdminController extends Controller
+class GeoController extends Controller
 {
     /**
      * {@inheritdoc}

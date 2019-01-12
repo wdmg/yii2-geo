@@ -19,10 +19,9 @@ class Bootstrap implements BootstrapInterface
         // Add module URL rules
         $app->getUrlManager()->addRules(
             [
-                $prefix.'geo/' => 'geo/admin/index',
-                $prefix.'geo/<controller:(admin|countries|regions|cities|translations)>/' => 'geo/<controller>/index',
-                $prefix.'geo/<controller:(admin|countries|regions|cities|translations)>/<action:\w+>' => 'geo/<controller>/<action>',
-                $prefix.'geo/<controller:(admin|countries|regions|cities|translations)>/<action:\w+>' => 'geo/<controller>/<action>',
+                $prefix.'<controller:(geo|countries|regions|cities|translations)>/' => 'geo/<controller>/index',
+                $prefix.'geo/<controller:(geo|countries|regions|cities|translations)>/<action:\w+>' => 'geo/<controller>/<action>',
+                $prefix.'<controller:(geo|countries|regions|cities|translations)>/<action:\w+>' => 'geo/<controller>/<action>',
             ],
             false
         );
