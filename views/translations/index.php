@@ -35,7 +35,6 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute' => 'source_type',
                 'header' => Yii::t('app/modules/geo', 'Source Type'),
-                'value' => 'source.title',
                 'value' => function($data, $model) {
                     if ($data->source_type == wdmg\geo\models\GeoTranslations::TR_COUNTRY)
                         return Yii::t('app/modules/geo','Country');
@@ -49,7 +48,21 @@ $this->params['breadcrumbs'][] = $this->title;
                 },
             ],
             'translation',
-            'language',
+            [
+                'attribute' => 'language',
+                'headerOptions' => [
+                    'class' => 'text-center'
+                ],
+                'contentOptions' => [
+                    'class' => 'text-center'
+                ],
+                'value' => function($data) {
+                    if(class_exists('Locale'))
+                        return \Locale::getDisplayLanguage($data->language, Yii::$app->language);
+                    else
+                        return $data->language;
+                }
+            ],
             [
                 'attribute' => 'created_at',
                 'format' => 'datetime',

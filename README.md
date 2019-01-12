@@ -2,8 +2,8 @@
 Geo module with countries and cities
 
 # Requirements 
-* PHP 5.6
-* Yii2 (v.2.0.10)
+* PHP 5.6 or higher
+* Yii2 v.2.0.10 and newest
 
 # Installation
 To install the module, run the following command in the console:

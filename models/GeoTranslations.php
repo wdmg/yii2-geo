@@ -64,21 +64,6 @@ class GeoTranslations extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    /*public function getSourceType()
-    {
-        if($this->source_type == 10)
-            return self::COUNTRY;
-        elseif ($this->source_type == 20)
-            return self::REGION;
-        elseif ($this->source_type == 30)
-            return self::CITY;
-        else
-            return '';
-    }*/
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
     public function getSource()
     {
         if($this->source_type == 10)
