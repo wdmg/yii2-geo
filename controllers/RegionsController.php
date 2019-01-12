@@ -8,6 +8,7 @@ use wdmg\geo\models\GeoRegionsSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
 
 /**
  * RegionsController implements the CRUD actions for GeoRegions model.
@@ -24,6 +25,15 @@ class RegionsController extends Controller
                 'class' => VerbFilter::className(),
                 'actions' => [
                     'delete' => ['POST'],
+                ],
+            ],
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'roles' => ['@']
+                    ],
                 ],
             ],
         ];

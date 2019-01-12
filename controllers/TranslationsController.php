@@ -8,6 +8,7 @@ use wdmg\geo\models\GeoTranslationsSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
 
 /**
  * TranslationsController implements the CRUD actions for GeoTranslations model.
@@ -24,6 +25,15 @@ class TranslationsController extends Controller
                 'class' => VerbFilter::className(),
                 'actions' => [
                     'delete' => ['POST'],
+                ],
+            ],
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'roles' => ['@']
+                    ],
                 ],
             ],
         ];
