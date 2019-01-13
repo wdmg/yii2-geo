@@ -3,6 +3,7 @@
 namespace wdmg\geo\models;
 
 use Yii;
+use \yii\behaviors\TimeStampBehavior;
 
 /**
  * This is the model class for table "geo_translations".
@@ -30,6 +31,25 @@ class GeoTranslations extends \yii\db\ActiveRecord
     public static function tableName()
     {
         return 'geo_translations';
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function behaviors()
+    {
+        return [
+            'timestamp' => [
+                'class' => TimestampBehavior::className(),
+                'attributes' => [
+                    self::EVENT_BEFORE_INSERT => 'created_at',
+                    self::EVENT_BEFORE_UPDATE => 'updated_at',
+                ],
+                'value' => function() {
+                    return date("Y-m-d H:i:s");
+                }
+            ],
+        ];
     }
 
     /**
