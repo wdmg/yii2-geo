@@ -65,7 +65,7 @@ class CountriesController extends Controller
     {
         $model = $this->findModel($id);
 
-        $translations = GeoTranslations::find()->select(['translation', 'language'])->where(['source_id' => $id, 'source_type' => 10])->all();
+        $translations = GeoTranslations::find()->select(['translation', 'language'])->where(['source_id' => $id, 'source_type' => GeoTranslations::TR_COUNTRY])->all();
         if(!empty($translations))
             $model->translations = $translations;
 

@@ -65,7 +65,7 @@ class CitiesController extends Controller
     {
         $model = $this->findModel($id);
 
-        $translations = GeoTranslations::find()->select(['translation', 'language'])->where(['source_id' => $id, 'source_type' => 30])->all();
+        $translations = GeoTranslations::find()->select(['translation', 'language'])->where(['source_id' => $id, 'source_type' => GeoTranslations::TR_CITY])->all();
         if(!empty($translations))
             $model->translations = $translations;
 
