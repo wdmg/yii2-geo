@@ -2,6 +2,7 @@ Changelog
 =========
 
 ## 1.0.3 (2019-01-10)
+ * Complete view for module items
  * Added custom search and filters
  * Added base module localization
  * Added models, controllers, views
