@@ -16,7 +16,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'slug')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'is_published')->textInput() ?>
+    <?= $form->field($model, 'is_published')->checkbox(['label' => '- '.$model->getAttributeLabel('is_published')]) ?>
 
     <div class="form-group">
         <?= Html::a(Yii::t('app/modules/geo', '&larr; Back to list'), ['countries/index'], ['class' => 'btn btn-default pull-left']) ?>&nbsp;

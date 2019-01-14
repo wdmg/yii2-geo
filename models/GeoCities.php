@@ -3,6 +3,7 @@
 namespace wdmg\geo\models;
 
 use Yii;
+use \yii\behaviors\TimeStampBehavior;
 
 /**
  * This is the model class for table "geo_cities".
