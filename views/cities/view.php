@@ -96,7 +96,8 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]) ?>
 
-    <p>
+    <hr/>
+    <div class="form-group">
         <?= Html::a(Yii::t('app/modules/geo', '&larr; Back to list'), ['cities/index'], ['class' => 'btn btn-default']) ?>
         <?= Html::a(Yii::t('app/modules/geo', 'Edit'), ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
         <?= Html::a(Yii::t('app/modules/geo', 'Delete'), ['delete', 'id' => $model->id], [
@@ -106,6 +107,6 @@ $this->params['breadcrumbs'][] = $this->title;
                 'method' => 'post',
             ],
         ]) ?>
-    </p>
+    </div>
 
 </div>
