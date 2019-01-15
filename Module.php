@@ -44,7 +44,7 @@ class Module extends \yii\base\Module
     // Registers translations for the module
     public function registerTranslations()
     {
-        Yii::$app->i18n->translations['app/modules/geo*'] = [
+        Yii::$app->i18n->translations['app/modules/geo'] = [
             'class' => 'yii\i18n\PhpMessageSource',
             'sourceLanguage' => 'en-US',
             'basePath' => '@vendor/wdmg/yii2-geo/messages',
