@@ -30,7 +30,7 @@ class GeoTranslations extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'geo_translations';
+        return '{{geo_translations}}';
     }
 
     /**

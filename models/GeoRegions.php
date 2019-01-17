@@ -32,7 +32,7 @@ class GeoRegions extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'geo_regions';
+        return '{{geo_regions}}';
     }
 
     /**
