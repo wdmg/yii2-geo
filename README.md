@@ -52,6 +52,7 @@ $config['bootstrap'][] = 'wdmg\geo\Bootstrap';
 `http://example.com/admin/geo` - Module dashboard
 
 # Status and version
+* v.1.0.4 - Bugfix and refactoring
 * v.1.0.3 - GridView search and filters, UI translation.
 * v.1.0.2 - Added routing path to Bootstrap.
 * v.1.0.1 - Added migrations path to Bootstrap.

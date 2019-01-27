@@ -1,6 +1,9 @@
 Changelog
 =========
 
+## 1.0.4 (2019-01-27)
+ * Bugfix and refactoring
+ 
 ## 1.0.3 (2019-01-10)
  * Complete view for module items
  * Added custom search and filters
