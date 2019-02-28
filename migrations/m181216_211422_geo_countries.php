@@ -18,7 +18,7 @@ class m181216_211422_geo_countries extends Migration
             $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
         }
 
-        $this->createTable('{{%geo_countries%}}', [
+        $this->createTable('{{%geo_countries}}', [
             'id' => $this->primaryKey(), // Primary key ID
             'title' => $this->string(255), // Region title (string)
             'slug' => $this->string(64)->notNull()->unique(), // Region slug (string)
@@ -34,8 +34,8 @@ class m181216_211422_geo_countries extends Migration
      */
     public function safeDown()
     {
-        $this->truncateTable('{{%geo_countries%}}');
-        $this->dropTable('{{%geo_countries%}}');
+        $this->truncateTable('{{%geo_countries}}');
+        $this->dropTable('{{%geo_countries}}');
     }
 
 }

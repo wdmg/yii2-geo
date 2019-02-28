@@ -34,7 +34,7 @@ class GeoCities extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return '{{geo_cities}}';
+        return '{{%geo_cities}}';
     }
 
     /**

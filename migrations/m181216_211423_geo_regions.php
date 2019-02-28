@@ -18,7 +18,7 @@ class m181216_211423_geo_regions extends Migration
             $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
         }
 
-        $this->createTable('{{%geo_regions%}}', [
+        $this->createTable('{{%geo_regions}}', [
             'id' => $this->primaryKey(), // Primary key ID
             'country_id' => $this->integer()->null(), // Country ID (int) from `geo_countries`.`id`
             'title' => $this->string(255), // Region title (string)
@@ -30,9 +30,9 @@ class m181216_211423_geo_regions extends Migration
 
         $this->addForeignKey(
             'fk_regions_to_countries',
-            '{{%geo_regions%}}',
+            '{{%geo_regions}}',
             'country_id',
-            '{{%geo_countries%}}',
+            '{{%geo_countries}}',
             'id',
             'SET NULL',
             'CASCADE'
@@ -40,7 +40,7 @@ class m181216_211423_geo_regions extends Migration
 
         $this->createIndex(
             'idx_geo_regions',
-            '{{%geo_regions%}}',
+            '{{%geo_regions}}',
             [
                 'title',
                 'slug',
@@ -56,11 +56,11 @@ class m181216_211423_geo_regions extends Migration
     {
         $this->dropForeignKey(
             'fk_regions_to_countries',
-            '{{%geo_regions%}}'
+            '{{%geo_regions}}'
         );
 
-        $this->truncateTable('{{%geo_regions%}}');
-        $this->dropTable('{{%geo_regions%}}');
+        $this->truncateTable('{{%geo_regions}}');
+        $this->dropTable('{{%geo_regions}}');
     }
 
 }

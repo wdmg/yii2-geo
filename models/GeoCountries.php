@@ -31,7 +31,7 @@ class GeoCountries extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return '{{geo_countries}}';
+        return '{{%geo_countries}}';
     }
 
     /**

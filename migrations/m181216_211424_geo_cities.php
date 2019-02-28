@@ -18,7 +18,7 @@ class m181216_211424_geo_cities extends Migration
             $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
         }
 
-        $this->createTable('{{%geo_cities%}}', [
+        $this->createTable('{{%geo_cities}}', [
             'id' => $this->primaryKey(), // Primary key ID
             'country_id' => $this->integer()->null(), // Country ID (int) from `geo_countries`.`id`
             'region_id' => $this->integer()->null(), // Region ID (int) from `geo_regions`.`id`
@@ -32,18 +32,18 @@ class m181216_211424_geo_cities extends Migration
 
         $this->addForeignKey(
             'fk_cities_to_countries',
-            '{{%geo_cities%}}',
+            '{{%geo_cities}}',
             'country_id',
-            '{{%geo_countries%}}',
+            '{{%geo_countries}}',
             'id',
             'SET NULL',
             'CASCADE'
         );
         $this->addForeignKey(
             'fk_cities_to_regions',
-            '{{%geo_cities%}}',
+            '{{%geo_cities}}',
             'region_id',
-            '{{%geo_regions%}}',
+            '{{%geo_regions}}',
             'id',
             'SET NULL',
             'CASCADE'
@@ -51,7 +51,7 @@ class m181216_211424_geo_cities extends Migration
 
         $this->createIndex(
             'idx_geo_cities',
-            '{{%geo_cities%}}',
+            '{{%geo_cities}}',
             [
                 'title',
                 'slug',
@@ -67,16 +67,16 @@ class m181216_211424_geo_cities extends Migration
     {
         $this->dropForeignKey(
             'fk_cities_to_countries',
-            '{{%geo_cities%}}'
+            '{{%geo_cities}}'
         );
 
         $this->dropForeignKey(
             'fk_cities_to_regions',
-            '{{%geo_cities%}}'
+            '{{%geo_cities}}'
         );
 
-        $this->truncateTable('{{%geo_cities%}}');
-        $this->dropTable('{{%geo_cities%}}');
+        $this->truncateTable('{{%geo_cities}}');
+        $this->dropTable('{{%geo_cities}}');
     }
 
 }

@@ -50,7 +50,7 @@ class InitController extends Controller
             foreach ($geo_countries as $country) {
                 $country['created_at'] = date("Y-m-d H:i:s");
                 $country['updated_at'] = date("Y-m-d H:i:s");
-                Yii::$app->db->createCommand()->insert('{{geo_countries}}', $country)->execute();
+                Yii::$app->db->createCommand()->insert('{{%geo_countries}}', $country)->execute();
             }
             echo $this->ansiFormat("Done.\n", Console::FG_GREEN);
 
@@ -59,7 +59,7 @@ class InitController extends Controller
             foreach ($geo_regions as $region) {
                 $region['created_at'] = date("Y-m-d H:i:s");
                 $region['updated_at'] = date("Y-m-d H:i:s");
-                Yii::$app->db->createCommand()->insert('{{geo_regions}}', $region)->execute();
+                Yii::$app->db->createCommand()->insert('{{%geo_regions}}', $region)->execute();
             }
             echo $this->ansiFormat("Done.\n", Console::FG_GREEN);
 
@@ -68,7 +68,7 @@ class InitController extends Controller
             foreach ($geo_cities as $city) {
                 $city['created_at'] = date("Y-m-d H:i:s");
                 $city['updated_at'] = date("Y-m-d H:i:s");
-                Yii::$app->db->createCommand()->insert('{{geo_cities}}', $city)->execute();
+                Yii::$app->db->createCommand()->insert('{{%geo_cities}}', $city)->execute();
             }
             echo $this->ansiFormat("Done.\n", Console::FG_GREEN);
 
@@ -77,7 +77,7 @@ class InitController extends Controller
             foreach ($geo_translations as $translation) {
                 $translation['created_at'] = date("Y-m-d H:i:s");
                 $translation['updated_at'] = date("Y-m-d H:i:s");
-                Yii::$app->db->createCommand()->insert('{{geo_translations}}', $translation)->execute();
+                Yii::$app->db->createCommand()->insert('{{%geo_translations}}', $translation)->execute();
             }
             echo $this->ansiFormat("Done.\n\n", Console::FG_GREEN);
 

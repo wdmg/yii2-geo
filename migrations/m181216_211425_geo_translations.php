@@ -20,7 +20,7 @@ class m181216_211425_geo_translations extends Migration
             $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
         }
 
-        $this->createTable('{{%geo_translations%}}', [
+        $this->createTable('{{%geo_translations}}', [
             'id' => $this->primaryKey(), // Primary key ID
             'language' => $this->string(16)->null(), // Language of translation (ISO)
             'source_id' => $this->integer()->null(), // Country/region/city ID (int)
@@ -32,7 +32,7 @@ class m181216_211425_geo_translations extends Migration
 
         $this->createIndex(
             'idx_geo_translations',
-            '{{%geo_translations%}}',
+            '{{%geo_translations}}',
             [
                 'language',
                 'source_type',
@@ -41,27 +41,27 @@ class m181216_211425_geo_translations extends Migration
 
         /*$this->addForeignKey(
             'fk_translations_to_countries',
-            '{{%geo_translations%}}',
+            '{{%geo_translations}}',
             'source_id',
-            '{{%geo_countries%}}',
+            '{{%geo_countries}}',
             'id',
             'SET NULL',
             'CASCADE'
         );
         $this->addForeignKey(
             'fk_translations_to_regions',
-            '{{%geo_translations%}}',
+            '{{%geo_translations}}',
             'source_id',
-            '{{%geo_regions%}}',
+            '{{%geo_regions}}',
             'id',
             'SET NULL',
             'CASCADE'
         );
         $this->addForeignKey(
             'fk_translations_to_cities',
-            '{{%geo_translations%}}',
+            '{{%geo_translations}}',
             'source_id',
-            '{{%geo_cities%}}',
+            '{{%geo_cities}}',
             'id',
             'SET NULL',
             'CASCADE'
@@ -77,18 +77,18 @@ class m181216_211425_geo_translations extends Migration
     {
         /*$this->dropForeignKey(
             'fk_translations_to_countries',
-            '{{%geo_translations%}}'
+            '{{%geo_translations}}'
         );
         $this->dropForeignKey(
             'fk_translations_to_regions',
-            '{{%geo_translations%}}'
+            '{{%geo_translations}}'
         );
         $this->dropForeignKey(
             'fk_translations_to_cities',
-            '{{%geo_translations%}}'
+            '{{%geo_translations}}'
         );*/
-        $this->truncateTable('{{%geo_translations%}}');
-        $this->dropTable('{{%geo_translations%}}');
+        $this->truncateTable('{{%geo_translations}}');
+        $this->dropTable('{{%geo_translations}}');
     }
 
 }
