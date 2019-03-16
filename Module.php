@@ -29,7 +29,7 @@ class Module extends \yii\base\Module
     /**
      * @var string the module version
      */
-    private $version = "1.0.5";
+    private $version = "1.0.6";
 
     /**
      * @var integer, priority of initialization
@@ -57,6 +57,9 @@ class Module extends \yii\base\Module
 
         // Register translations
         $this->registerTranslations();
+
+        // Normalize route prefix
+        $this->routePrefixNormalize();
     }
 
     /**
@@ -101,5 +104,54 @@ class Module extends \yii\base\Module
     public static function t($category, $message, $params = [], $language = null)
     {
         return Yii::t('app/modules/geo' . $category, $message, $params, $language);
+    }
+
+    /**
+     * Normalize route prefix
+     * @return string of current route prefix
+     */
+    public function routePrefixNormalize()
+    {
+        if(!empty($this->routePrefix)) {
+            $this->routePrefix = str_replace('/', '', $this->routePrefix);
+            $this->routePrefix = '/'.$this->routePrefix;
+            $this->routePrefix = str_replace('//', '/', $this->routePrefix);
+        }
+        return $this->routePrefix;
+    }
+
+    /**
+     * Build dashboard navigation items for NavBar
+     * @return array of current module nav items
+     */
+    public function dashboardNavItems()
+    {
+        return [
+            'label' => Yii::t('app/modules/geo', 'Locations'),
+            'url' => [$this->routePrefix . '/geo/'],
+            'active' => in_array(\Yii::$app->controller->module->id, ['geo']),
+            'items' => [
+                [
+                    'label' => Yii::t('app/modules/geo', 'Countries list'),
+                    'url' => [$this->routePrefix . '/geo/countries/index'],
+                    'active' => (in_array(\Yii::$app->controller->module->id, ['geo']) &&  Yii::$app->controller->id == 'countries'),
+                ],
+                [
+                    'label' => Yii::t('app/modules/geo', 'Regions list'),
+                    'url' => [$this->routePrefix . '/geo/regions/index'],
+                    'active' => (in_array(\Yii::$app->controller->module->id, ['geo']) &&  Yii::$app->controller->id == 'regions'),
+                ],
+                [
+                    'label' => Yii::t('app/modules/geo', 'Cities list'),
+                    'url' => [$this->routePrefix . '/geo/cities/index'],
+                    'active' => (in_array(\Yii::$app->controller->module->id, ['geo']) &&  Yii::$app->controller->id == 'cities'),
+                ],
+                [
+                    'label' => Yii::t('app/modules/geo', 'Translations'),
+                    'url' => [$this->routePrefix . '/geo/translations/index'],
+                    'active' => (in_array(\Yii::$app->controller->module->id, ['geo']) &&  Yii::$app->controller->id == 'translations'),
+                ]
+            ]
+        ];
     }
 }

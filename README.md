@@ -49,9 +49,21 @@ $config['bootstrap'][] = 'wdmg\geo\Bootstrap';
 `
 
 # Routing
-`http://example.com/admin/geo` - Module dashboard
+Use the `Module::dashboardNavItems()` method of the module to generate a navigation items list for NavBar, like this:
+
+    <?php
+        echo Nav::widget([
+        'options' => ['class' => 'navbar-nav navbar-right'],
+            'label' => 'Modules',
+            'items' => [
+                Yii::$app->getModule('geo')->dashboardNavItems(),
+                ...
+            ]
+        ]);
+    ?>
 
 # Status and version [in progress development]
+* v.1.0.6 - Added dashboard navigation items for NavBar
 * v.1.0.5 - Fixing tables names in migrations
 * v.1.0.4 - Bugfix and refactoring
 * v.1.0.3 - GridView search and filters, UI translation.

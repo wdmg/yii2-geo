@@ -1,12 +1,17 @@
 <?php
 
 return [
+    'Locations' => 'Локации',
     'Geo Module' => 'ГЕО-модуль',
 
-    'View Countries' => 'Список стран',
-    'View Regions' => 'Список регионов',
-    'View Cities' => 'Список городов',
-    'View Translations' => 'Список переводов',
+    'Countries list' => 'Список стран',
+    'View Countries' => 'Просмотр стран',
+    'Regions list' => 'Список регионов',
+    'View Regions' => 'Просмотр регионов',
+    'Cities list' => 'Список городов',
+    'View Cities' => 'Просмотр городов',
+    'Translations' => 'Переводы',
+    'View Translations' => 'Просмотр переводов',
 
     'Countries' => 'Страны',
     'Regions' => 'Регионы',
