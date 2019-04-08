@@ -25,11 +25,25 @@ class Bootstrap implements BootstrapInterface
         // Add module URL rules
         $app->getUrlManager()->addRules(
             [
-                $prefix.'<controller:(geo|countries|regions|cities|translations)>/' => 'geo/<controller>/index',
-                $prefix.'geo/<controller:(geo|countries|regions|cities|translations)>/<action:\w+>' => 'geo/<controller>/<action>',
-                $prefix.'<controller:(geo|countries|regions|cities|translations)>/<action:\w+>' => 'geo/<controller>/<action>',
+                $prefix . '<module:geo>/' => '<module>/geo/index',
+                $prefix . '<module:geo>/<controller:(geo|countries|regions|cities|translations)>/' => '<module>/<controller>',
+                $prefix . '<module:geo>/<controller:(geo|countries|regions|cities|translations)>/<action:\w+>' => '<module>/<controller>/<action>',
+                [
+                    'pattern' => $prefix . '<module:geo>/',
+                    'route' => '<module>/geo/index',
+                    'suffix' => '',
+                ], [
+                    'pattern' => $prefix . '<module:geo>/<controller:(geo|countries|regions|cities|translations)>/',
+                    'route' => '<module>/<controller>',
+                    'suffix' => '',
+                ], [
+                    'pattern' => $prefix . '<module:geo>/<controller:(geo|countries|regions|cities|translations)>/<action:\w+>',
+                    'route' => '<module>/<controller>/<action>',
+                    'suffix' => '',
+                ],
             ],
-            false
+            true
         );
+
     }
 }
