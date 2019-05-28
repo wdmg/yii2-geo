@@ -8,7 +8,7 @@ use yii\widgets\Pjax;
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = Yii::t('app/modules/geo', 'Cities');
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app/modules/geo', 'Geo Module'), 'url' => ['../admin/geo']];
+$this->params['breadcrumbs'][] = ['label' => $this->context->module->name, 'url' => ['geo/index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="page-header">

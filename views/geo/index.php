@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 /* @var $this yii\web\View */
 
-$this->title = Yii::t('app/modules/geo', 'Geo Module');
+$this->title = $this->context->module->name;
 $this->params['breadcrumbs'][] = $this->title;
 ?>
     <div class="page-header">

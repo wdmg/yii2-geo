@@ -6,7 +6,7 @@ namespace wdmg\geo;
  * Yii2 GEO
  *
  * @category        Module
- * @version         1.0.6
+ * @version         1.1.0
  * @author          Alexsander Vyshnyvetskyy <alex.vyshnyvetskyy@gmail.com>
  * @link            https://github.com/wdmg/yii2-geo
  * @copyright       Copyright (c) 2019 W.D.M.Group, Ukraine
@@ -34,6 +34,16 @@ class Module extends \yii\base\Module
     public $routePrefix = "admin";
 
     /**
+     * @var string, the name of module
+     */
+    public $name = "Locations";
+
+    /**
+     * @var string, the description of module
+     */
+    public $description = "Geo module with countries and cities";
+
+    /**
      * @var string the vendor name of module
      */
     private $vendor = "wdmg";
@@ -41,12 +51,12 @@ class Module extends \yii\base\Module
     /**
      * @var string the module version
      */
-    private $version = "1.0.6";
+    private $version = "1.1.0";
 
     /**
      * @var integer, priority of initialization
      */
-    private $priority = 6;
+    private $priority = 8;
 
     /**
      * @var array of strings missing translations
@@ -111,6 +121,10 @@ class Module extends \yii\base\Module
 
             },
         ];
+
+        // Name and description translation of module
+        $this->name = Yii::t('app/modules/geo', $this->name);
+        $this->description = Yii::t('app/modules/geo', $this->description);
     }
 
     public static function t($category, $message, $params = [], $language = null)
@@ -139,7 +153,7 @@ class Module extends \yii\base\Module
     public function dashboardNavItems()
     {
         return [
-            'label' => Yii::t('app/modules/geo', 'Locations'),
+            'label' => $this->name,
             'url' => [$this->routePrefix . '/geo/'],
             'active' => in_array(\Yii::$app->controller->module->id, ['geo']),
             'items' => [

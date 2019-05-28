@@ -8,8 +8,8 @@ use yii\helpers\Html;
 $this->title = Yii::t('app/modules/geo', 'Edit translation: {name}', [
     'name' => '#'.$model->id,
 ]);
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app/modules/geo', 'Geo Module'), 'url' => ['../admin/geo']];
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app/modules/geo', 'Translations'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => $this->context->module->name, 'url' => ['geo/index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app/modules/geo', 'Translations'), 'url' => ['translations/index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = Yii::t('app/modules/geo', 'Update');
 ?>

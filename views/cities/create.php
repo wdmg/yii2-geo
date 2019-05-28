@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $model app\models\GeoCities */
 
 $this->title = Yii::t('app/modules/geo', 'Add new city');
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app/modules/geo', 'Geo Module'), 'url' => ['../admin/geo']];
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app/modules/geo', 'Cities'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => $this->context->module->name, 'url' => ['geo/index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app/modules/geo', 'Cities'), 'url' => ['cities/index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="page-header">

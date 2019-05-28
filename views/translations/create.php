@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $model app\models\GeoTranslations */
 
 $this->title = Yii::t('app/modules/geo', 'Add new translation');
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app/modules/geo', 'Geo Module'), 'url' => ['../admin/geo']];
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app/modules/geo', 'Translations'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => $this->context->module->name, 'url' => ['geo/index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app/modules/geo', 'Translations'), 'url' => ['translations/index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="page-header">

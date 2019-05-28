@@ -2,6 +2,8 @@
 
 return [
     'Locations' => 'Локации',
+    'Geo module with countries and cities' => 'Локации',
+
     'Geo Module' => 'ГЕО-модуль',
 
     'Countries list' => 'Список стран',
