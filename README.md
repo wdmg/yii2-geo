@@ -9,7 +9,7 @@ Geo module with countries and cities
 
 # Requirements 
 * PHP 5.6 or higher
-* Yii2 v.2.0.13 and newest
+* Yii2 v.2.0.19 and newest
 
 # Installation
 To install the module, run the following command in the console:
@@ -63,14 +63,8 @@ Use the `Module::dashboardNavItems()` method of the module to generate a navigat
     ?>
 
 # Status and version [in progress development]
+* v.1.1.1 - Update Yii2 version
 * v.1.1.0 - Added module name and description, translations. Routing fix.
-* v.1.0.6 - Added dashboard navigation items for NavBar
-* v.1.0.5 - Fixing tables names in migrations
-* v.1.0.4 - Bugfix and refactoring
-* v.1.0.3 - GridView search and filters, UI translation.
-* v.1.0.2 - Added routing path to Bootstrap.
-* v.1.0.1 - Added migrations path to Bootstrap.
-* v.1.0.0 - First pre-release
 
 \* - The demo database contains 144 countries, 111 regions and 4923 cities of such countries as: Russia, Ukraine, Kazakhstan, Azerbaijan, Belarus, Moldova, Poland, South Ossetia, Georgia, Kyrgyzstan, Uzbekistan and contains a total of 20863 translations in EN, UK (Ukrainian), PL, DE.
 Sources of demo data of countries, cities and regions are initially presented in Russian.
