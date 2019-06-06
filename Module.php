@@ -6,7 +6,7 @@ namespace wdmg\geo;
  * Yii2 GEO
  *
  * @category        Module
- * @version         1.1.3
+ * @version         1.1.4
  * @author          Alexsander Vyshnyvetskyy <alex.vyshnyvetskyy@gmail.com>
  * @link            https://github.com/wdmg/yii2-geo
  * @copyright       Copyright (c) 2019 W.D.M.Group, Ukraine
@@ -45,14 +45,9 @@ class Module extends BaseModule
     public $description = "Geo module with countries and cities";
 
     /**
-     * @var string the vendor name of module
-     */
-    private $vendor = "wdmg";
-
-    /**
      * @var string the module version
      */
-    private $version = "1.1.3";
+    private $version = "1.1.4";
 
     /**
      * @var integer, priority of initialization
@@ -93,6 +88,24 @@ class Module extends BaseModule
         ];
     }
 
+    /**
+     * {@inheritdoc}
+     */
+    public function init()
+    {
+        parent::init();
+
+        // Set version of current module
+        $this->setVersion($this->version);
+
+        // Set priority of current module
+        $this->setPriority($this->priority);
+
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function bootstrap($app) {
         parent::bootstrap($app);
     }

@@ -57,9 +57,8 @@ Use the `Module::dashboardNavItems()` method of the module to generate a navigat
     ?>
 
 # Status and version [in progress development]
+* v.1.1.4 - Module refactoring
 * v.1.1.3 - Module transferred to base module interface. Update Yii2 version.
-* v.1.1.2 - Bugfix, routing and refactoring
-* v.1.1.1 - Update Yii2 version
 
 \* - The demo database contains 144 countries, 111 regions and 4923 cities of such countries as: Russia, Ukraine, Kazakhstan, Azerbaijan, Belarus, Moldova, Poland, South Ossetia, Georgia, Kyrgyzstan, Uzbekistan and contains a total of 20863 translations in EN, UK (Ukrainian), PL, DE.
 Sources of demo data of countries, cities and regions are initially presented in Russian.
