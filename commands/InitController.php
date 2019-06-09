@@ -16,7 +16,17 @@ class InitController extends Controller
     /**
      * @inheritdoc
      */
+    public $choice = null;
+
+    /**
+     * @inheritdoc
+     */
     public $defaultAction = 'index';
+
+    public function options($actionID)
+    {
+        return ['choice', 'color', 'interactive', 'help'];
+    }
 
     public function actionIndex($params = null)
     {
@@ -36,7 +46,11 @@ class InitController extends Controller
         echo "  3) Batch insert demo data\n\n";
         echo "Your choice: ";
 
-        $selected = trim(fgets(STDIN));
+        if(!is_null($this->choice))
+            $selected = $this->choice;
+        else
+            $selected = trim(fgets(STDIN));
+
         if ($selected == "1") {
             Yii::$app->runAction('migrate/up', ['migrationPath' => '@vendor/wdmg/yii2-geo/migrations', 'interactive' => true]);
         } else if($selected == "2") {
