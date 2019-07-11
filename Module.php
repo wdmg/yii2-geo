@@ -57,7 +57,7 @@ class Module extends BaseModule
     /**
      * {@inheritdoc}
      */
-    public function dashboardNavItems()
+    public function dashboardNavItems($createLink = false)
     {
         return [
             'label' => $this->name,
