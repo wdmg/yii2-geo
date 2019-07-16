@@ -29,5 +29,10 @@
     "psr-4": {
       "wdmg\\geo\\": ""
     }
+  },
+  "extra": {
+    "options": {
+      "routePrefix": "admin"
+    }
   }
 }
