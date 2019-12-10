@@ -41,7 +41,7 @@ class GeoCountries extends \yii\db\ActiveRecord
     {
         return [
             'timestamp' => [
-                'class' => TimestampBehavior::className(),
+                'class' => TimestampBehavior::class,
                 'attributes' => [
                     self::EVENT_BEFORE_INSERT => ['created_at', 'updated_at'],
                     self::EVENT_BEFORE_UPDATE => 'updated_at',
@@ -89,7 +89,7 @@ class GeoCountries extends \yii\db\ActiveRecord
      */
     public function getGeoCities()
     {
-        return $this->hasMany(GeoCities::className(), ['country_id' => 'id']);
+        return $this->hasMany(GeoCities::class, ['country_id' => 'id']);
     }
 
     /**
@@ -97,7 +97,7 @@ class GeoCountries extends \yii\db\ActiveRecord
      */
     public function getGeoRegions()
     {
-        return $this->hasMany(GeoRegions::className(), ['country_id' => 'id']);
+        return $this->hasMany(GeoRegions::class, ['country_id' => 'id']);
     }
 
 }

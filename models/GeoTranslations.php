@@ -40,7 +40,7 @@ class GeoTranslations extends \yii\db\ActiveRecord
     {
         return [
             'timestamp' => [
-                'class' => TimestampBehavior::className(),
+                'class' => TimestampBehavior::class,
                 'attributes' => [
                     self::EVENT_BEFORE_INSERT => ['created_at', 'updated_at'],
                     self::EVENT_BEFORE_UPDATE => 'updated_at',
@@ -87,11 +87,11 @@ class GeoTranslations extends \yii\db\ActiveRecord
     public function getSource()
     {
         if($this->source_type == 10)
-            return $this->hasOne(GeoCountries::className(), ['id' => 'source_id']);
+            return $this->hasOne(GeoCountries::class, ['id' => 'source_id']);
         elseif ($this->source_type == 20)
-            return $this->hasOne(GeoRegions::className(), ['id' => 'source_id']);
+            return $this->hasOne(GeoRegions::class, ['id' => 'source_id']);
         elseif ($this->source_type == 30)
-            return $this->hasOne(GeoCities::className(), ['id' => 'source_id']);
+            return $this->hasOne(GeoCities::class, ['id' => 'source_id']);
         else
             return '';
     }

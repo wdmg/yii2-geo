@@ -44,7 +44,7 @@ class GeoCities extends \yii\db\ActiveRecord
     {
         return [
             'timestamp' => [
-                'class' => TimestampBehavior::className(),
+                'class' => TimestampBehavior::class,
                 'attributes' => [
                     self::EVENT_BEFORE_INSERT => ['created_at', 'updated_at'],
                     self::EVENT_BEFORE_UPDATE => 'updated_at',
@@ -67,8 +67,8 @@ class GeoCities extends \yii\db\ActiveRecord
             [['created_at', 'updated_at'], 'safe'],
             [['title'], 'string', 'max' => 255],
             [['slug'], 'string', 'max' => 64],
-            [['country_id'], 'exist', 'skipOnError' => true, 'targetClass' => GeoCountries::className(), 'targetAttribute' => ['country_id' => 'id']],
-            [['region_id'], 'exist', 'skipOnError' => true, 'targetClass' => GeoRegions::className(), 'targetAttribute' => ['region_id' => 'id']],
+            [['country_id'], 'exist', 'skipOnError' => true, 'targetClass' => GeoCountries::class, 'targetAttribute' => ['country_id' => 'id']],
+            [['region_id'], 'exist', 'skipOnError' => true, 'targetClass' => GeoRegions::class, 'targetAttribute' => ['region_id' => 'id']],
         ];
     }
 
@@ -96,7 +96,7 @@ class GeoCities extends \yii\db\ActiveRecord
      */
     public function getCountry()
     {
-        return $this->hasOne(GeoCountries::className(), ['id' => 'country_id']);
+        return $this->hasOne(GeoCountries::class, ['id' => 'country_id']);
     }
 
     /**
@@ -104,6 +104,6 @@ class GeoCities extends \yii\db\ActiveRecord
      */
     public function getRegion()
     {
-        return $this->hasOne(GeoRegions::className(), ['id' => 'region_id']);
+        return $this->hasOne(GeoRegions::class, ['id' => 'region_id']);
     }
 }
