@@ -54,6 +54,8 @@ class m181216_211423_geo_regions extends Migration
      */
     public function safeDown()
     {
+        $this->dropIndex('{{%idx_geo_regions}}', '{{%geo_regions}}');
+
         $this->dropForeignKey(
             'fk_regions_to_countries',
             '{{%geo_regions}}'

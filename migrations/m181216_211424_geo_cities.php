@@ -65,6 +65,8 @@ class m181216_211424_geo_cities extends Migration
      */
     public function safeDown()
     {
+        $this->dropIndex('{{%idx_geo_cities}}', '{{%geo_cities}}');
+
         $this->dropForeignKey(
             'fk_cities_to_countries',
             '{{%geo_cities}}'

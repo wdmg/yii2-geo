@@ -75,6 +75,8 @@ class m181216_211425_geo_translations extends Migration
      */
     public function safeDown()
     {
+        $this->dropIndex('{{%idx_geo_translations}}', '{{%geo_translations}}');
+
         /*$this->dropForeignKey(
             'fk_translations_to_countries',
             '{{%geo_translations}}'
