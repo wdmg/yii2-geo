@@ -1,6 +1,6 @@
-[![Yii2](https://img.shields.io/badge/required-Yii2_v2.0.33-blue.svg)](https://packagist.org/packages/yiisoft/yii2)
-[![Downloads](https://img.shields.io/packagist/dt/wdmg/yii2-geo.svg)](https://packagist.org/packages/wdmg/yii2-geo)
-[![Packagist Version](https://img.shields.io/packagist/v/wdmg/yii2-geo.svg)](https://packagist.org/packages/wdmg/yii2-geo)
+[![Progress](https://img.shields.io/badge/required-Yii2_v2.0.33-blue.svg)](https://packagist.org/packages/yiisoft/yii2)
+[![Github all releases](https://img.shields.io/github/downloads/wdmg/yii2-geo/total.svg)](https://GitHub.com/wdmg/yii2-geo/releases/)
+[![GitHub version](https://badge.fury.io/gh/wdmg%2Fyii2-geo.svg)](https://github.com/wdmg/yii2-geo)
 ![Progress](https://img.shields.io/badge/progress-in_development-red.svg)
 [![GitHub license](https://img.shields.io/github/license/wdmg/yii2-geo.svg)](https://github.com/wdmg/yii2-geo/blob/master/LICENSE)
 
@@ -58,12 +58,9 @@ Use the `Module::dashboardNavItems()` method of the module to generate a navigat
     ?>
 
 # Status and version [in progress development]
+* v.1.2.0 - Update copyrights, fix menu dashboard
 * v.1.1.8 - Up to date dependencies
 * v.1.1.7 - Fixed deprecated class declaration
-* v.1.1.6 - Added extra options to composer.json (for Butterfly.CMS implementation)
-* v.1.1.5 - Added choice param for non interactive mode
-* v.1.1.4 - Module refactoring
-* v.1.1.3 - Module transferred to base module interface. Update Yii2 version.
 
 \* - The demo database contains 144 countries, 111 regions and 4923 cities of such countries as: Russia, Ukraine, Kazakhstan, Azerbaijan, Belarus, Moldova, Poland, South Ossetia, Georgia, Kyrgyzstan, Uzbekistan and contains a total of 20863 translations in EN, UK (Ukrainian), PL, DE.
 Sources of demo data of countries, cities and regions are initially presented in Russian.
