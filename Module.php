@@ -75,7 +75,7 @@ class Module extends BaseModule
      */
     public function dashboardNavItems($options = null)
     {
-        $tems = [
+        $items = [
             'label' => $this->name,
             'url' => [$this->routePrefix . '/'. $this->id],
             'icon' => 'fa fa-fw fa-globe-americas',
